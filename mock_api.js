@@ -106,7 +106,7 @@ function getReligions() {
     let religionResult;
     return new Promise((resolve, reject) => {
     $.ajax({
-        url : "http://localhost:8000/religion/",
+        url : "http://eldhose06.pythonanywhere.com/religion/",
         dataType : "JSON",
         contentType: "application/json",
         type : "GET",
@@ -126,7 +126,7 @@ function getCaste(religion_id) {
    let castResult;
    return new Promise((resolve, reject) => {
    $.ajax({
-       url : "http://localhost:8000/caste/?religion_id="+ religion_id + "",
+       url : "http://eldhose06.pythonanywhere.com/caste/?religion_id="+ religion_id + "",
        dataType : "JSON",
        // contentType: "application/json",
        type : "GET",
@@ -149,7 +149,7 @@ function getInstitute() {
     let instituteResult;
     return new Promise((resolve, reject) => {
     $.ajax({
-        url : "http://localhost:8000/institutes/",
+        url : "http://eldhose06.pythonanywhere.com/institutes/",
         dataType : "JSON",
         contentType: "application/json",
         type : "GET",
@@ -169,7 +169,7 @@ function getPost(institute_id) {
    let postResult;
    return new Promise((resolve, reject) => {
    $.ajax({
-       url : "http://localhost:8000/post/?institute_id="+ institute_id + "",
+       url : "http://eldhose06.pythonanywhere.com/post/?institute_id="+ institute_id + "",
        dataType : "JSON",
        // contentType: "application/json",
        type : "GET",
@@ -192,7 +192,7 @@ function getNationality() {
     let nationalityResult;
     return new Promise((resolve, reject) => {
     $.ajax({
-        url : "http://localhost:8000/nationality/",
+        url : "http://eldhose06.pythonanywhere.com/nationality/",
         dataType : "JSON",
         contentType: "application/json",
         type : "GET",
