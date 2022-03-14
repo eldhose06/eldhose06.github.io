@@ -118,8 +118,8 @@
       var httpr = new XMLHttpRequest();
       try {
         
-         httpr.open("POST", "https://eldhose06.pythonanywhere.com/user/login/", true);
-//         httpr.open("POST", "http://localhost:8000/user/login/", true);
+        httpr.open("POST", "https://eldhose06.pythonanywhere.com/user/login/", true);
+        // httpr.open("POST", "http://localhost:8000/user/login/", true);
         httpr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         console.log('READYSTATE:', httpr.readyState);
         httpr.onreadystatechange = function () {
