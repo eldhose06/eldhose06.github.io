@@ -108,7 +108,7 @@
         <p>Not Registered? <a href="registration.html">Create an Account</a></p>
       </div>
     </div>
-    
+
   </form>
   <script>
     function send_data() {
@@ -117,6 +117,8 @@
       var psw = document.getElementById("psw").value;
       var httpr = new XMLHttpRequest();
       try {
+        
+        // httpr.open("POST", "https://eldhose06.pythonanywhere.com/user/login/", true);
         httpr.open("POST", "http://localhost:8000/user/login/", true);
         httpr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         console.log('READYSTATE:', httpr.readyState);
@@ -125,37 +127,37 @@
           console.log('READYSTATE:', httpr.readyState);
           console.log(httpr.status);
           console.log("data");
-         
-            if (httpr.readyState == 4) {
-              if (httpr.status == 200) {
-                //Runs when the request is successful
-                console.log("success");
-                alert("Login Successful");
-                console.log(httpr.responseText);
 
-                var jsondata = httpr.responseText;
+          if (httpr.readyState == 4) {
+            if (httpr.status == 200) {
+              //Runs when the request is successful
+              console.log("success");
+              alert("Login Successful");
+              console.log(httpr.responseText);
 
-                const obj = JSON.parse(jsondata);
-                console.log(obj.id);
-                sessionStorage.setItem("id", obj.id);
-                var data = sessionStorage.getItem("id");
-                console.log(data);
-                //  location.href = "application.html";
-                // window.location.href = "application.html";
-              } else {
-                // Runs when it's not
-                console.log("error");
-                alert("Login Failed");
-                // console.log(httpr.responseText);
-              }
+              var jsondata = httpr.responseText;
+
+              const obj = JSON.parse(jsondata);
+              console.log(obj.id);
+              sessionStorage.setItem("id", obj.id);
+              var data = sessionStorage.getItem("id");
+              console.log(data);
+              //  location.href = "application.html";
+               window.location.href = "application.html";
+            } else {
+              // Runs when it's not
+              console.log("error");
+              alert("Login Failed");
+              // console.log(httpr.responseText);
             }
+          }
 
-          
+
         }
         httpr.send("email=" + email + "&password=" + psw);
       } catch (error) {
         console.log(error);
-        
+
       }
       // httpr.open("POST","https://eldhose06.pythonanywhere.com/user/login/",true);
 
