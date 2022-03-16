@@ -92,12 +92,7 @@
       text-align: center;
     }
   </style>
-  <script>
-    var data = sessionStorage.getItem("id");
-    console.log("data");
-    console.log(data);
-    document.getElementById('id').value = data;
-  </script>
+ 
 </head>
 
 <body>
@@ -405,7 +400,10 @@
 
 
   $(document).ready(function () {
-
+ var data = sessionStorage.getItem("id");
+    console.log("data");
+    console.log(data);
+    document.getElementById('id').value = data;
     // var id = sessionStorage.getItem("id");
     // console.log(id);
     // getUsers(id).then((data) => {
